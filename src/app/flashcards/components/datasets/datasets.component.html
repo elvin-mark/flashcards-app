@@ -1,0 +1,13 @@
+<div class="justify-center items-center h-[90vh] w-screen bg-gray-100 p-[2%]">
+  <h1>Upload your dataset</h1>
+  <mat-card class="w-[90%] p-[2%]">
+    <h2 class="text-2xl font-bold mb-4">Upload File</h2>
+    <input type="file" (change)="handleFileInput($event)" matInput />
+  </mat-card>
+  <mat-list>
+    <mat-list-item *ngFor="let deck of getDecks()">
+      {{ deck["name"] }}
+      {{ deck["numberOfCards"] }}
+    </mat-list-item>
+  </mat-list>
+</div>
