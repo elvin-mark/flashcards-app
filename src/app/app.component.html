@@ -1,0 +1,41 @@
+<mat-drawer-container class="w-full h-screen" autosize>
+  <mat-drawer #drawer class="p-5" mode="side">
+    <mat-list role="list">
+      <mat-list-item role="listitem"
+        ><button mat-button (click)="goToDatasets()">
+          Datasets
+        </button></mat-list-item
+      >
+      <mat-divider></mat-divider>
+      <mat-list-item role="listitem"
+        ><button mat-button (click)="goToPractice()">
+          Practice!
+        </button></mat-list-item
+      >
+      <mat-divider></mat-divider>
+      <mat-list-item role="listitem"
+        ><button mat-button (click)="goToProgress()">
+          Progress
+        </button></mat-list-item
+      >
+      <mat-divider></mat-divider>
+    </mat-list>
+  </mat-drawer>
+
+  <div>
+    <mat-toolbar class="flex" color="primary">
+      <button
+        mat-icon-button
+        class="icon"
+        (click)="drawer.toggle()"
+        aria-label="Example icon-button with menu icon"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span (click)="goToHome()">Flashcards App</span>
+    </mat-toolbar>
+    <div class="flex">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</mat-drawer-container>

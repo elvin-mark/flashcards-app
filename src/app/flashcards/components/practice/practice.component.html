@@ -1,0 +1,26 @@
+<div
+  class="flex grid grid-cols-1 justify-center items-center w-screen h-[80vh]"
+>
+  <div class="flex justify-center">
+    <div class="h-[40vh] w-[90%] md:w-[70%] lg:w-[50%]">
+      <app-card
+        front="{{ this.currentCard?.front || 'fr' }}"
+        back="{{ this.currentCard?.back || '' }}"
+      ></app-card>
+    </div>
+  </div>
+  <button
+    mat-button
+    (click)="previousCard()"
+    [disabled]="!this.currentCard || isFirstCard()"
+  >
+    Previous
+  </button>
+  <button
+    mat-button
+    (click)="nextCard()"
+    [disabled]="!this.currentCard || isLastCard()"
+  >
+    Next
+  </button>
+</div>

@@ -1,0 +1,36 @@
+/* flipping-card.component.css */
+
+/* Flip card container */
+.flip-card {
+    perspective: 1000px;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Flip card inner container */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Apply flip effect when the flip class is added */
+  .flip-card-inner.flip {
+    transform: rotateY(180deg);
+  }
+  
+  /* Front face of flip card */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  
+  /* Back face of flip card */
+  .flip-card-back {
+    transform: rotateY(180deg);
+  }
+  
